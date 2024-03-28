@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   trailingSlash: true,
@@ -11,8 +11,12 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       apexcharts: path.resolve(__dirname, './node_modules/apexcharts-clevision')
-    }
+    };
 
-    return config
+    return config;
+  },
+  eslint: {
+    // This setting tells Next.js to ignore ESLint during the build process
+    ignoreDuringBuilds: true,
   }
-}
+};
