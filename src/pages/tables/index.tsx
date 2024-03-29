@@ -61,7 +61,7 @@ const MUITable = () => {
 
     // Fetch data with applied filters
     // Example:
-    fetch(`http://127.0.0.1:5000/api/filter?leadName=${leadName}&intentScore=${intentScore}&agentCalledLast=${agentCalledLast}&dateOfLastCall=${dateOfLastCall}`)
+    fetch(`http://13.127.143.196:8501/api/filter?leadName=${leadName}&intentScore=${intentScore}&agentCalledLast=${agentCalledLast}&dateOfLastCall=${dateOfLastCall}`)
       .then(response => response.json())
       .then(data => {
         setData(data);
@@ -123,7 +123,7 @@ function getCurrentTimestamp() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/fetch');
+      const response = await fetch('http://13.127.143.196:8501/api/fetch');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

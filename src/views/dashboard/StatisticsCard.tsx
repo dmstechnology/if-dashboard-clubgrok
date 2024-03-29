@@ -27,8 +27,8 @@ const StatisticsCard = () => {
     formData.append('csv_file', file);
 
     try {
-      console.log('Sending request to:', 'http://127.0.0.1:5000/api/upload');
-      const response = await fetch('http://127.0.0.1:5000/api/upload', {
+      console.log('Sending request to:', 'http://13.127.143.196:8501/api/upload');
+      const response = await fetch('http://13.127.143.196:8501/api/upload', {
         method: 'POST',
         body: formData,
       });
