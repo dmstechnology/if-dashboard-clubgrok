@@ -4,6 +4,7 @@ import AccountOutline from 'mdi-material-ui/AccountOutline';
 import CellphoneLink from 'mdi-material-ui/CellphoneLink';
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd';
 import TrendingUp from 'mdi-material-ui/TrendingUp';
+import { baseurl } from 'src/connection/const';
 
 
 
@@ -27,8 +28,8 @@ const StatisticsCard = () => {
     formData.append('csv_file', file);
 
     try {
-      console.log('Sending request to:', 'https://oq1iei9xb1.execute-api.ap-south-1.amazonaws.com/dev/upload');
-      const response = await fetch('https://oq1iei9xb1.execute-api.ap-south-1.amazonaws.com/dev/upload', {
+      console.log('Sending request to:', baseurl+'/upload');
+      const response = await fetch(baseurl+'/upload', {
         method: 'POST',
         body: formData,
       });

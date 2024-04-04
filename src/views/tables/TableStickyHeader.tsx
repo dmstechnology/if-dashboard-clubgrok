@@ -7,6 +7,7 @@ import TableBody from '@mui/material/TableBody';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import TablePagination from '@mui/material/TablePagination';
+import {baseurl} from '../../connection/const';
 
 const TableStickyHeader = () => {
   const [page, setPage] = useState(0);
@@ -15,7 +16,7 @@ const TableStickyHeader = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://oq1iei9xb1.execute-api.ap-south-1.amazonaws.com/dev/fetch');
+      const response = await fetch(baseurl+'/fetch');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

@@ -20,6 +20,7 @@ import TablePagination from '@mui/material/TablePagination';
 // import TableStickyHeader from 'src/views/tables/TableStickyHeader'
 import { IconButton, Button, TextField, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
+import { baseurl } from 'src/connection/const';
 
 const MUITable = () => {
   const [openModal, setOpenModal] = useState(false); // State for modal open/close
@@ -61,7 +62,7 @@ const MUITable = () => {
 
     // Fetch data with applied filters
     // Example:
-    fetch(`https://oq1iei9xb1.execute-api.ap-south-1.amazonaws.com/dev/filter?leadName=${leadName}&intentScore=${intentScore}&agentCalledLast=${agentCalledLast}&dateOfLastCall=${dateOfLastCall}`)
+    fetch(baseurl+`/filter?leadName=${leadName}&intentScore=${intentScore}&agentCalledLast=${agentCalledLast}&dateOfLastCall=${dateOfLastCall}`)
       .then(response => response.json())
       .then(data => {
         setData(data);
@@ -123,7 +124,7 @@ function getCurrentTimestamp() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://oq1iei9xb1.execute-api.ap-south-1.amazonaws.com/dev/fetch');
+      const response = await fetch(baseurl+'/fetch');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
