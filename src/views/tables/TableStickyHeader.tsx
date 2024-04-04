@@ -15,7 +15,7 @@ const TableStickyHeader = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://13.127.143.196:8501/api/fetch');
+      const response = await fetch('https://oq1iei9xb1.execute-api.ap-south-1.amazonaws.com/dev/fetch');
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
